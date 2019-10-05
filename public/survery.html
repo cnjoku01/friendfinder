@@ -140,7 +140,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h3 class="modal-title">Your New Best Friend</h1>
+						<h3 class="modal-title">Your New Best Friend is?</h1>
 					</div>
 					<div class="modal-body">
 						<h2 id="bestFriend"></h2>
@@ -166,8 +166,7 @@
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
-</html>
+
 
 <script type="text/javascript">
 	$("#submitBtn").on("click", function(event) {
@@ -197,15 +196,18 @@
 				]
 			};
 			var currentURL = window.location.origin;
-			// Ajax call for receiving response after POST req
+			// ajax call for receiving response after POST req
 			$.post(currentURL + "/api/friends", newUser, function(data) {
 				$("#bestFriend").text(data.name);
 				$("#bestFriendPhoto").attr("src", data.photo);
 				$("#bestFriendModal").modal("toggle");
 			});
 		} else {
-			// If a required field is missing, show alert
+			// if a required field is missing, show alert
 			alert("Survey is incomplete!");
 		}
 	});
 </script>
+
+</body>
+</html>
